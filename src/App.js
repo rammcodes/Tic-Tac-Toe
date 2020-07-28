@@ -49,6 +49,8 @@ class App extends Component {
     this.setState({
       isStarted: true,
       actvPlr: 1,
+      p1Name: this.state.p1Name.length ? this.state.p1Name : 'Player 1',
+      p2Name: this.state.p2Name.length ? this.state.p2Name : 'Player 2',
     })
     this.p1TimerInst = setInterval(() => {
       this.setState({
@@ -201,7 +203,7 @@ class App extends Component {
       if (this.state.p2Timer > 5) {
         this.setState({
           winner: 1,
-          p1Timer: 0,
+          p2Timer: 0,
         })
         clearInterval(this.p2TimerInst)
       }

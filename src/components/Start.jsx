@@ -18,6 +18,7 @@ const Start = (props) => {
       <div className="player-cont">
         <input
           maxlength="10"
+          minLength="3"
           type="text"
           name="p1Name"
           value={p1Name}
@@ -43,6 +44,7 @@ const Start = (props) => {
       <div className="player-cont">
         <input
           maxlength="10"
+          minLength="3"
           onChange={(e) => {
             onNameChange(e)
           }}
