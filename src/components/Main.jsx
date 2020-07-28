@@ -4,7 +4,7 @@ const Main = (props) => {
   const { p1Timer, p2Timer, blocks, actvPlr, onBlockPress } = props
   return (
     <div className="main">
-      <div className="timer">
+      <div className="timer t1">
         <span className={`sec ${actvPlr === 1 ? 'actv' : ''}`}>{p1Timer}</span>
         <h6>Timer</h6>
       </div>
@@ -15,7 +15,7 @@ const Main = (props) => {
           </div>
         ))}
       </div>
-      <div className="timer">
+      <div className="timer t2">
         <span className={`sec ${actvPlr === 2 ? 'actv' : ''}`}>{p2Timer}</span>
         <h6>Timer</h6>
       </div>

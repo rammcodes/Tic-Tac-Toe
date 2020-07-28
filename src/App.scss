@@ -98,3 +98,61 @@
     color: #fff;
   }
 }
+
+@media (max-width: 900px) {
+  .app {
+    .start {
+      flex-wrap: wrap;
+      .player-cont {
+        input {
+          padding: 15px 0px;
+          width: 250px;
+        }
+      }
+      .switch {
+        order: -1;
+        width: 100%;
+        margin-bottom: 40px;
+        padding: 15px 0;
+      }
+    }
+    .main {
+      margin: 40px 0;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .app {
+    .container {
+      margin: 20px auto;
+    }
+    .start {
+      .player-cont {
+        input {
+          padding: 15px 0px;
+          width: 140px;
+          font-size: 1rem;
+        }
+      }
+    }
+    .main {
+      flex-wrap: wrap;
+      .t1 {
+        order: 1;
+      }
+      .t2 {
+        order: 2;
+      }
+      .board {
+        width: 100%;
+        margin: 20px 0;
+      }
+      .timer {
+        .sec {
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+}
