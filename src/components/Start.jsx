@@ -1,19 +1,34 @@
 import React from 'react'
 
 const Start = (props) => {
-  const { p1Name, p2Name, winner, draw, isStarted, onReset, onEnd, onStart } = props
+  const {
+    p1Name,
+    p2Name,
+    winner,
+    draw,
+    actvPlr,
+    isStarted,
+    onReset,
+    onEnd,
+    onStart,
+    onNameChange,
+  } = props
   return (
     <div className="start">
       <div className="player-cont">
         <input
+          maxlength="10"
           type="text"
+          name="p1Name"
           value={p1Name}
-          onChange={() => console.log('no')}
-          className=" actv-plr"
+          onChange={(e) => {
+            onNameChange(e)
+          }}
+          className={`${actvPlr === 1 ? 'actv-plr' : ''}`}
         />
       </div>
       {winner || draw ? (
-        <button className="switch pink" onClick={onReset}>
+        <button className="switch blue" onClick={onReset}>
           RESET
         </button>
       ) : isStarted ? (
@@ -26,7 +41,16 @@ const Start = (props) => {
         </button>
       )}
       <div className="player-cont">
-        <input onChange={() => console.log('no')} type="text" value={p2Name} />
+        <input
+          maxlength="10"
+          onChange={(e) => {
+            onNameChange(e)
+          }}
+          name="p2Name"
+          type="text"
+          value={p2Name}
+          className={`${actvPlr === 2 ? 'actv-plr' : ''}`}
+        />
       </div>
     </div>
   )

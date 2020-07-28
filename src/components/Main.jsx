@@ -1,12 +1,12 @@
 import React from 'react'
 
 const Main = (props) => {
-  const { p1Timer, p2Timer, blocks, onBlockPress } = props
+  const { p1Timer, p2Timer, blocks, actvPlr, onBlockPress } = props
   return (
     <div className="main">
       <div className="timer">
-        <span className="sec actv">{p1Timer}</span>
-        <span>Timer</span>
+        <span className={`sec ${actvPlr === 1 ? 'actv' : ''}`}>{p1Timer}</span>
+        <h6>Timer</h6>
       </div>
       <div className="board">
         {blocks.map((item, idx) => (
@@ -16,8 +16,8 @@ const Main = (props) => {
         ))}
       </div>
       <div className="timer">
-        <span className="sec">{p2Timer}</span>
-        <span>Timer</span>
+        <span className={`sec ${actvPlr === 2 ? 'actv' : ''}`}>{p2Timer}</span>
+        <h6>Timer</h6>
       </div>
     </div>
   )

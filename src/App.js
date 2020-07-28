@@ -35,6 +35,16 @@ class App extends Component {
     })
   }
 
+  onNameChange = (e) => {
+    const { name, value } = e.target
+
+    if (!this.state.isStarted) {
+      this.setState({
+        [name]: value,
+      })
+    }
+  }
+
   onStart = () => {
     this.setState({
       isStarted: true,
@@ -208,18 +218,28 @@ class App extends Component {
             isStarted={this.state.isStarted}
             winner={this.state.winner}
             draw={this.state.draw}
+            actvPlr={this.state.actvPlr}
             onReset={this.onReset}
             onEnd={this.onEnd}
             onStart={this.onStart}
+            onNameChange={this.onNameChange}
           />
 
           <Main
+            p1Name={this.state.p1Name}
+            p2Name={this.state.p2Name}
             p1Timer={this.state.p1Timer}
             p2Timer={this.state.p2Timer}
             blocks={this.state.blocks}
             onBlockPress={this.onBlockPress}
+            actvPlr={this.state.actvPlr}
           />
-          <Announcement winner={this.state.winner} draw={this.state.draw} />
+          <Announcement
+            p1Name={this.state.p1Name}
+            p2Name={this.state.p2Name}
+            winner={this.state.winner}
+            draw={this.state.draw}
+          />
         </div>
       </div>
     )
